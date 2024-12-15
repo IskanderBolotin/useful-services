@@ -10,7 +10,7 @@ type MarketplaceProps = {
 };
 
 const Marketplace: React.FC<MarketplaceProps> = ({ data, handler }) => {
-  const { id, name, code } = data;
+  const { id, name } = data;
 
   const getDataHandler = () => {
     if (isDefinedFn(handler)) {

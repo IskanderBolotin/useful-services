@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router";
 import CustomButton, { ButtonViewType } from "../customButton";
 import Icon from "./images/arrow-left-icon.svg?react";
-import { AppPath } from "shared/config";
-import s from "./homeButton.module.scss";
 
 const HomeButton: React.FC = () => {
   let navigate = useNavigate();

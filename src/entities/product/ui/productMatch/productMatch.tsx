@@ -12,7 +12,7 @@ type ProductMatchProps = {
 
 const ProductMatch: React.FC<ProductMatchProps> = ({ data }) => {
   const {
-    image,
+    // image,
     name,
     marketpalce,
     article,

@@ -1,3 +1,5 @@
+import { ComponentProps, ElementType } from "react";
+
 export const enum ButtonDirection {
   Left = "left",
   Top = "top",
@@ -10,4 +12,17 @@ export const enum ButtonViewType {
   PrimaryBorder = 'primary-border-type',
   Common = 'common-type',
   CommonWarning = 'common-warning-type',
-}
+};
+
+
+type CustomButtonOwnProps<E> = {
+  as?: E;
+  className?: string;
+  icon?: IconSvg;
+  iconGap?: number;
+  direction?: ButtonDirection;
+  buttonViewType?: ButtonViewType;
+  handler?: () => void;
+} 
+
+export type CustomButtonProps<E extends ElementType> = CustomButtonOwnProps<E> & Omit<ComponentProps<E>, keyof CustomButtonOwnProps<E>>;
