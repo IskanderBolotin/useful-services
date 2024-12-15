@@ -1,0 +1,14 @@
+@use "shared/variables.scss" as *;
+
+.header {
+  padding: 36px 0 25px;
+  background-color: $color-primary;
+  margin-bottom: 36px;
+  color: $color-light;
+}
+.inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,0 +1,1 @@
+export type WithNullishType<T> = T | null | undefined;
