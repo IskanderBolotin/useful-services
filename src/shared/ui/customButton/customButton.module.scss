@@ -17,7 +17,7 @@
     background-color: $color-primary;
     border: 2px solid #{$color-primary};
     padding: 6px 22px;
-    &:hover {
+    &:hover, &.active {
       background-color: $color-light;
       color: $color-primary;
     }
@@ -27,7 +27,7 @@
     background-color: $color-primary;
     border: 2px solid #{$color-light};
     padding: 6px 22px;
-    &:hover {
+    &:hover, &.active {
       background-color: $color-light;
       color: $color-primary;
     }
@@ -37,7 +37,7 @@
     background-color: transparent;
     border: 2px solid #{$color-primary};
     padding: 6px 22px;
-    &:hover {
+    &:hover, &.active {
       background-color: $color-primary;
       color: $color-light;
     }
@@ -47,7 +47,7 @@
     background-color: transparent;
     border: 2px solid #{$color-primary};
     padding: 6px 22px;
-    &:hover {
+    &:hover, &.active {
       background-color: $color-primary;
       color: $color-light;
     }

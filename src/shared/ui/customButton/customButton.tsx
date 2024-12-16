@@ -6,7 +6,7 @@ import s from "./customButton.module.scss";
 
 const defaultElement = "button";
 
-const CustomButton = <E extends ElementType = typeof defaultElement> ({ as, className, icon: Icon, iconGap, direction = ButtonDirection.Left, buttonViewType: buttonType = ButtonViewType.Common, handler, children, ...otherProps }: React.PropsWithChildren<CustomButtonProps<E>>) => {
+const CustomButton = <E extends ElementType = typeof defaultElement> ({ as, className, icon: Icon, iconGap, isActive = false, direction = ButtonDirection.Left, buttonViewType: buttonType = ButtonViewType.Common, handler, children, ...otherProps }: React.PropsWithChildren<CustomButtonProps<E>>) => {
   const TagName = as || defaultElement;
   const isButtonVertical = direction === ButtonDirection.Top || direction === ButtonDirection.Bottom;
 
@@ -90,7 +90,7 @@ const CustomButton = <E extends ElementType = typeof defaultElement> ({ as, clas
   };
 
   return (
-    <TagName className={cn(s.button, s[buttonType], className)} {...otherProps} onClick={onClickHandler}>
+    <TagName className={cn(s.button, s[buttonType], isActive && s.active, className)} {...otherProps} onClick={onClickHandler}>
       <span className={cn(s.inner, isButtonVertical && s.vertical)}>
         {
           renderContent()

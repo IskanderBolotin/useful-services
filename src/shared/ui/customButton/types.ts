@@ -20,6 +20,7 @@ type CustomButtonOwnProps<E> = {
   className?: string;
   icon?: IconSvg;
   iconGap?: number;
+  isActive?: boolean;
   direction?: ButtonDirection;
   buttonViewType?: ButtonViewType;
   handler?: () => void;

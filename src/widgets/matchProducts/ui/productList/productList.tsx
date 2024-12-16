@@ -8,9 +8,9 @@ type ProductListProps = {
 const ProductList: React.FC<ProductListProps> = ({ data }) => {
   return (
     <ul className={s.list}>
-      {data.map((product) => {
+      {data.map((product, index) => {
         return (
-          <li className={s.item}>
+          <li className={s.item} key={index}>
             <ProductMatch data={product} />
           </li>
         );

@@ -1,0 +1,17 @@
+@use "shared/variables.scss" as *;
+
+.prop {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 33px;
+  text-align: left;
+  margin-right: 10px;
+  color: $color-light;
+}
+.value {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 33px;
+  text-align: right;
+  color: $color-light;
+}

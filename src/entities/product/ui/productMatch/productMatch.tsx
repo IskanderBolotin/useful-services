@@ -5,6 +5,7 @@ import Image from "./images/image.jpg";
 import s from "./productMatch.module.scss";
 import RouteLinkButton from "shared/ui/routeLinkButton";
 import { AppPath } from "shared/config";
+import { Grid2 } from "@mui/material";
 
 type ProductMatchProps = {
   data: ProductType;
@@ -25,41 +26,43 @@ const ProductMatch: React.FC<ProductMatchProps> = ({ data }) => {
 
   return (
     <div className={s.wrapper}>
-      <div className={s.inner}>
-        <div className={s.image}>
+      <Grid2 container spacing={2} columns={24}>
+        <Grid2 size={4}>
           <div className={s.picture}>
             <img src={Image} alt="" />
           </div>
-        </div>
-        <div className={s.info}>
+        </Grid2>
+        <Grid2 size={20}>
           <div className={s.productData}>
             <div className={s.topBar}>
-              <div className={s.colTop}>
-                <div className={s.title}>{name}</div>
-                <div className={s.article}>
-                  <div className={s.articleitem}>
-                  {marketpalce}
+              <Grid2 container spacing={2} columns={24}>
+                <Grid2>
+                  <div className={s.title}>{name}</div>
+                  <div className={s.article}>
+                    <div className={s.articleitem}>
+                    {marketpalce}
+                    </div>
+                    <div className={s.articleitem}>
+                    Артикул: {article}
+                    </div>
                   </div>
-                  <div className={s.articleitem}>
-                  Артикул: {article}
+                </Grid2>
+                <Grid2>
+                  <div className={s.status}>{status}</div>
+                </Grid2>
+                <Grid2 offset={"auto"}>
+                  <div className={s.textInfo}>Цена</div>
+                  <div className={s.textInfo}>{price}</div>
+                </Grid2>
+                <Grid2>
+                  <div className={cn(s.textInfo, s.alignRight)}>
+                    {`Матч ${match}`}
                   </div>
-                </div>
-              </div>
-              <div className={s.colTop}>
-                <div className={s.status}>{status}</div>
-              </div>
-              <div className={cn(s.colTop, s.leftOffsetAuto)}>
-                <div className={s.textInfo}>Цена</div>
-                <div className={s.textInfo}>{price}</div>
-              </div>
-              <div className={s.colTop}>
-                <div className={cn(s.textInfo, s.alignRight)}>
-                  {`Матч ${match}`}
-                </div>
-                <div className={cn(s.textInfo, s.alignRight)}>
-                  {`${successRate}% успех`}
-                </div>
-              </div>
+                  <div className={cn(s.textInfo, s.alignRight)}>
+                    {`${successRate}% успех`}
+                  </div>
+                </Grid2>
+              </Grid2>
             </div>
             <div className={s.bottomBar}>
               <div className={cn(s.colBottom, s.grow)}>
@@ -81,8 +84,8 @@ const ProductMatch: React.FC<ProductMatchProps> = ({ data }) => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </Grid2>
+      </Grid2>
     </div>
   );
 };

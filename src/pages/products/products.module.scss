@@ -1,12 +1,1 @@
-.catalog {
-  display: flex;
-  margin: 0 -20px;
-}
-.aside {
-  padding: 0 20px;
-  width: 36%;
-}
-.main {
-  padding: 0 20px;
-  width: 64%;
-}
+@use "shared/variables.scss" as *;

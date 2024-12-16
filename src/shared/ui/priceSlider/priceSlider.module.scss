@@ -1,0 +1,14 @@
+@use "shared/variables.scss" as *;
+
+.text {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+  color: $color-light;
+}
+.textSmall {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  color: $color-light;
+}

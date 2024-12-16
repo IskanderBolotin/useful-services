@@ -1,6 +1,14 @@
 import { ProductList } from "widgets/matchProducts";
 import { SelectMarketplace } from "widgets/selectMarketplace";
+import PriceSlider from "shared/ui/priceSlider";
+import { Box, Grid2, Stack } from "@mui/material";
+import CheckboxFilter from "shared/ui/checkboxFilter";
 import s from "./products.module.scss";
+import PriceForm from "shared/ui/priceForm";
+import InfoForm from "shared/ui/infoForm";
+import WarningText from "shared/ui/warningText";
+import { isDefinedArray } from "shared/lib/isDefined";
+import SortingList from "shared/ui/sortingList";
 
 const data = [
   {
@@ -54,16 +62,38 @@ const data = [
 ];
 
 export const Products: React.FC = () => {
+  const isDataLoading = isDefinedArray(data);
+
   return (
     <div className="container">
-      <div className={s.catalog}>
-        <aside className={s.aside}>
-          <SelectMarketplace />
-        </aside>
-        <main className={s.main}>
-          <ProductList data={data} />
-        </main>
-      </div>
+      <Grid2 container spacing={2} columns={25}>
+        <Grid2 size={9} component="aside">
+          <Stack>
+            <Box>
+              <SelectMarketplace />
+            </Box>
+            <Box sx={{ marginTop: "20px" }}>
+              <InfoForm />
+            </Box>
+            <Box sx={{ marginTop: "20px" }}>
+              <CheckboxFilter />
+            </Box>
+            <Box sx={{ marginTop: "20px" }}>
+              <PriceForm />
+            </Box>      
+          </Stack>
+        </Grid2>
+        <Grid2 size={16} component="main">
+          <Box sx={{ marginBottom: "18px" }}>
+            <SortingList />
+          </Box>
+          {
+            isDataLoading ?
+            <ProductList data={data} /> :
+            <WarningText />
+          }
+        </Grid2>
+      </Grid2>
     </div>
   );
 };
