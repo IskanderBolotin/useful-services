@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Grid2, styled, Input, FormGroup, Box, Typography } from "@mui/material";
+import { Grid2, styled, Input, Box, Typography } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import s from "./priceSlider.module.scss";
 
-function valuetext(value: number) {
-  return `${value} Руб.`;
-}
+// function valuetext(value: number) {
+//   return `${value} Руб.`;
+// }
 
 const CustomSlider = styled(Slider)(() => ({
   color: "#ffffff",

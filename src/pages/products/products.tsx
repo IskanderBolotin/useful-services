@@ -1,9 +1,7 @@
 import { ProductList } from "widgets/matchProducts";
 import { SelectMarketplace } from "widgets/selectMarketplace";
-import PriceSlider from "shared/ui/priceSlider";
 import { Box, Grid2, Stack } from "@mui/material";
 import CheckboxFilter from "shared/ui/checkboxFilter";
-import s from "./products.module.scss";
 import PriceForm from "shared/ui/priceForm";
 import InfoForm from "shared/ui/infoForm";
 import WarningText from "shared/ui/warningText";

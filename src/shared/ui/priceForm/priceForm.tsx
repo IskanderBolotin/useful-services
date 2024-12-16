@@ -1,4 +1,4 @@
-import { Box, FormControl, FormGroup, FormLabel } from "@mui/material";
+import { Box, FormControl, FormLabel } from "@mui/material";
 import s from "./priceForm.module.scss";
 import PriceSlider from "../priceSlider";
 
