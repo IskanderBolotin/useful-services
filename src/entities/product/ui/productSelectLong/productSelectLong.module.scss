@@ -1,0 +1,7 @@
+@use "shared/variables.scss" as *;
+
+.wrapper {
+  padding: 24px;
+  background-color: $color-light;
+  border-radius: 10px;
+}

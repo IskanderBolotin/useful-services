@@ -3,10 +3,6 @@ import { Grid2, styled, Input, Box, Typography } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import s from "./priceSlider.module.scss";
 
-// function valuetext(value: number) {
-//   return `${value} Руб.`;
-// }
-
 const CustomSlider = styled(Slider)(() => ({
   color: "#ffffff",
   height: 6,
@@ -65,7 +61,7 @@ const PriceSlider: React.FC<PriceSliderType> = ({ values }) => {
         }
         valueLabelDisplay="auto"
         value={value}
-        onChange={handleChange}
+        onChange={handleChange} 
         min={values[0]}
         max={values[1]}
       />
