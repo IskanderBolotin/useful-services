@@ -27,27 +27,32 @@
     display: block;
   }
 }
+
 .nameProp {
   font-size: 20px;
   line-height: 27px;
   font-weight: 700;
 }
+
 .valueProp {
   font-size: 32px;
   line-height: 44px;
   font-weight: 700;
 }
+
 .name {
-  color:$color-info;
+  color: $color-info;
   font-size: 24px;
   line-height: 23px;
   font-weight: 700;
 }
+
 .propInfo {
   font-size: 16px;
   line-height: 22px;
   font-weight: 700;
 }
+
 .link {
   font-size: 20px;
   line-height: 27px;

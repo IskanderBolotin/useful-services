@@ -1,5 +1,5 @@
 import { Grid2 } from "@mui/material";
-import { ProductShort } from "entities/product";
+import { ProductSelectLong, ProductShort } from "entities/product";
 
 const Match: React.FC = () => {
   return (
@@ -8,7 +8,9 @@ const Match: React.FC = () => {
         <Grid2 size={1}>
           <ProductShort />
         </Grid2>
-        <Grid2 size={3}></Grid2>
+        <Grid2 size={3}>
+          <ProductSelectLong />
+        </Grid2>
       </Grid2>
     </div>
   );

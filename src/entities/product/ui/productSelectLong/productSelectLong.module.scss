@@ -5,3 +5,53 @@
   background-color: $color-light;
   border-radius: 10px;
 }
+
+.topBar {
+  margin-bottom: 32px;
+}
+
+.picture {
+  overflow: hidden;
+  position: relative;
+  padding-top: 132.6%;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.nameProp {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 700;
+}
+
+.valueProp {
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+.name {
+  color: $color-info;
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+.propInfo {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 700;
+}
+
+.link {
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 700;
+  color: $color-primary;
+}
