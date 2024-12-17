@@ -1,6 +1,7 @@
 import { Box, FormControl, FormLabel } from "@mui/material";
 import s from "./priceForm.module.scss";
 import PriceSlider from "../priceSlider";
+import SearchInput from "../searchInput";
 
 const PriceForm: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const PriceForm: React.FC = () => {
         </Box>
         <FormLabel component="legend">Поиск по артикулу</FormLabel>
         <Box>
-
+          <SearchInput />
         </Box>
       </FormControl>
     </Box>

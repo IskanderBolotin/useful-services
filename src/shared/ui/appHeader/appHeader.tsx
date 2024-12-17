@@ -1,3 +1,4 @@
+import BalanceInfo from "../balanceInfo";
 import HomeButton from "../homeButton";
 import s from "./appHeader.module.scss";
 
@@ -8,7 +9,7 @@ const AppHeader: React.FC = () => {
         <div className={s.inner}>
           <HomeButton />
           <div className={s.balance}>
-            <div>Баланс</div>
+            <BalanceInfo />
           </div>
         </div>
       </div>

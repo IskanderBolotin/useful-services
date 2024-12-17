@@ -1,5 +1,6 @@
 import { Grid2 } from "@mui/material";
 import { ProductSelectLong, ProductShort } from "entities/product";
+import SortingMatchList from "shared/ui/sortingMatchList";
 
 const Match: React.FC = () => {
   return (
@@ -9,7 +10,18 @@ const Match: React.FC = () => {
           <ProductShort />
         </Grid2>
         <Grid2 size={3}>
-          <ProductSelectLong />
+          <SortingMatchList />
+          <Grid2 container spacing={3} columns={4} direction="column">
+            <Grid2 size={4}>
+              <ProductSelectLong />
+            </Grid2>
+            <Grid2 size={4}>
+              <ProductSelectLong />
+            </Grid2>
+            <Grid2 size={4}>
+              <ProductSelectLong />
+            </Grid2>
+          </Grid2>
         </Grid2>
       </Grid2>
     </div>
