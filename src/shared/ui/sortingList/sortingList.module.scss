@@ -10,4 +10,22 @@
 .wrapper {
   overflow: auto;
   padding-bottom: 18px;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    background: transparent;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 5px;
+    height: 5px;
+    cursor: grab;
+    background: #6d32b859;
+    border-radius: 5px;
+  }
 }

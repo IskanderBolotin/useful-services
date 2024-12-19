@@ -2,6 +2,7 @@ import { Box, FormControl, FormLabel } from "@mui/material";
 import s from "./priceForm.module.scss";
 import PriceSlider from "../priceSlider";
 import SearchInput from "../searchInput";
+import SelectInput from "../selectInput";
 
 const PriceForm: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const PriceForm: React.FC = () => {
         component="fieldset"
         variant="standard"
       >
+        <SelectInput />
         <FormLabel component="legend">Фильтры</FormLabel>
         <Box sx={{ marginBottom: "24px"}}>
           <PriceSlider values={[0, 1000]}/>
