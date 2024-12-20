@@ -2,13 +2,11 @@
 
 .text {
   font-weight: 700;
-  font-size: 28px;
-  line-height: 33px;
   color: $color-light;
+  @include font-28;
 }
 .textSmall {
   font-weight: 700;
-  font-size: 20px;
-  line-height: 27px;
   color: $color-light;
+  @include font-20;
 }

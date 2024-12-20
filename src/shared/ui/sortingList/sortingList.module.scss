@@ -1,11 +1,11 @@
 @use "shared/variables.scss" as *;
 
+
 .title {
   color: $color-primary;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
   margin-bottom: 20px;
+  @include font-24;
 }
 .wrapper {
   overflow: auto;

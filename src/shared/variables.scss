@@ -3,5 +3,75 @@ $color-light: #fefefe;
 $color-common: #6d6d6d;
 $color-background: #f8f8f8;
 $color-warning: #ec231f;
-$color-sucsess:#2b9b29;
+$color-sucsess: #2b9b29;
 $color-info: #ff5917;
+
+$width-container: 1648px;
+
+$width-desktop: 1700px;
+$width-laptop: 1400px;
+
+@mixin font-32 {
+  & {
+    font-size: 32px;
+    line-height: 1.375;
+    @media (max-width: $width-desktop) {
+      font-size: 28px;
+    }
+    @media (max-width: $width-laptop) {
+      font-size: 24px;
+    }
+  }
+}
+
+@mixin font-28 {
+  & {
+    font-size: 28px;
+    line-height: 1.375;
+    @media (max-width: $width-desktop) {
+      font-size: 24px;
+    }
+    @media (max-width: $width-laptop) {
+      font-size: 20px;
+    }
+  }
+}
+
+@mixin font-24 {
+  & {
+    font-size: 24px;
+    line-height: 1.375;
+    @media (max-width: $width-desktop) {
+      font-size: 20px;
+    }
+    @media (max-width: $width-laptop) {
+      font-size: 18px;
+    }
+  }
+}
+
+@mixin font-20 {
+  & {
+    font-size: 20px;
+    line-height: 1.375;
+    @media (max-width: $width-desktop) {
+      font-size: 16px;
+    }
+    @media (max-width: $width-laptop) {
+      font-size: 14px;
+    }
+  }
+}
+
+@mixin font-16 {
+  & {
+    font-size: 16px;
+    line-height: 1.375;
+    @media (max-width: $width-desktop) {
+      font-size: 14px;
+    }
+    @media (max-width: $width-laptop) {
+      font-size: 12px;
+    }
+  }
+}

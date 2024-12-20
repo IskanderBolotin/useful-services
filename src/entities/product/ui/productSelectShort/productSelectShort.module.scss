@@ -1,5 +1,6 @@
 @use "shared/variables.scss" as *;
 
+
 .wrapper {
   border-radius: 10px;
   padding: 24px 32px;
@@ -8,10 +9,9 @@
 
 .title {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
   margin-bottom: 12px;
   color: $color-primary;
+  @include font-24;
 }
 
 .picture {
@@ -31,21 +31,18 @@
 
 .nameProp {
   color: $color-primary;
-  font-size: 24px;
-  line-height: 33px;
   font-weight: 700;
+  @include font-24;
 }
 
 .valueProp {
   color: $color-primary;
-  font-size: 24px;
-  line-height: 33px;
   font-weight: 700;
+  @include font-24;
 }
 
 .name {
   color: $color-primary;
-  font-size: 24px;
-  line-height: 33px;
   font-weight: 700;
+  @include font-24;
 }

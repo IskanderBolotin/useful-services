@@ -86,7 +86,7 @@ export const Products: React.FC = () => {
         </Grid2>
         <Grid2 size={16} component="main">
           <Box sx={{ mb: 2 }}>
-            <Grid2 container justifyContent="space-between">
+            <Grid2 container justifyContent="space-between" spacing={1}>
               <Grid2>
                 <ExportButton />
               </Grid2>

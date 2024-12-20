@@ -1,5 +1,6 @@
 @use "shared/variables.scss" as *;
 
+
 .wrapper {
   padding: 24px;
   background-color: $color-light;
@@ -25,33 +26,28 @@
 }
 
 .nameProp {
-  font-size: 24px;
-  line-height: 33px;
   font-weight: 700;
+  @include font-24;
 }
 
 .valueProp {
-  font-size: 32px;
-  line-height: 44px;
   font-weight: 700;
+  @include font-32;
 }
 
 .name {
   color: $color-info;
-  font-size: 32px;
-  line-height: 44px;
   font-weight: 700;
+  @include font-32;
 }
 
 .propInfo {
-  font-size: 24px;
-  line-height: 33px;
   font-weight: 700;
+  @include font-24;
 }
 
 .link {
-  font-size: 20px;
-  line-height: 27px;
   font-weight: 700;
   color: $color-primary;
+  @include font-20;
 }

@@ -1,16 +1,16 @@
 @use "shared/variables.scss" as *;
 
+
 .fieldset {
   width: 100%;
   display: flex;
   legend {
     font-weight: 700;
-    font-size: 28px;
-    line-height: 38px;
     color: $color-light;
     margin-bottom: 12px;
     &[class*="Mui-focused"] {
       color: $color-light;
     }
+    @include font-28;
   }
 }

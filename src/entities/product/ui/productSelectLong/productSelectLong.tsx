@@ -10,7 +10,7 @@ const ProductSelectLong: React.FC = () => {
     <div className={s.wrapper}>
       <Grid2 container columns={24} spacing={4} direction="column">
         <Grid2 size={24}>
-          <Grid2 container columns={24} alignItems="center">
+          <Grid2 container columns={24} alignItems="center" spacing={1}>
             <Grid2 size={16}>
               <Grid2 container columns={24} spacing={9}>
                 <Grid2 size={8}>

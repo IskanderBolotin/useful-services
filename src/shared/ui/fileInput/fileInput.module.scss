@@ -1,5 +1,6 @@
 @use "shared/variables.scss" as *;
 
+
 .inputLong {
   position: absolute;
   top: 0;
@@ -12,8 +13,7 @@
 }
 .title {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
   margin-bottom: 8px;
   color: $color-primary;
+  @include font-24;
 }

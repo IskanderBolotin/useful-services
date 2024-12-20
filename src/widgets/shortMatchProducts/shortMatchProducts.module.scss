@@ -1,10 +1,10 @@
 @use "shared/variables.scss" as *;
 
+
 .title {
   font-weight: 700;
-  font-size: 32px;
-  line-height: 44px;
   text-align: center;
   margin-bottom: 12px;
   color: $color-primary;
+  @include font-32;
 }

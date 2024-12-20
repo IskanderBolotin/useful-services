@@ -1,5 +1,6 @@
 @use 'shared/variables.scss' as *;
 
+
 .button {
   display: inline-block;
   max-width: 100%;
@@ -7,8 +8,6 @@
   border: 0;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
   text-align: center;
   transition: .25s border linear, .25s  background-color linear, .25s color linear;
   cursor: pointer;
@@ -52,6 +51,7 @@
       color: $color-light;
     }
   }
+  @include font-24;
 }
 .inner {
   display: flex;

@@ -1,5 +1,6 @@
 @use "shared/variables.scss" as *;
 
+
 .label[class*="MuiFormControlLabel-labelPlacementStart"] {
   display: flex;
   width: 100%;
@@ -13,10 +14,9 @@
     ) {
     color: $color-light;
     flex-grow: 1;
-    font-size: 24px;
-    line-height: 33px;
     font-weight: 700;
     text-align: left;
+    @include font-24;
   }
   [class*="MuiCheckbox-root"] {
     padding: 0;
