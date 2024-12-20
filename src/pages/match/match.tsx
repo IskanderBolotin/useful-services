@@ -1,10 +1,12 @@
 import { Grid2 } from "@mui/material";
 import { ProductSelectLong, ProductShort } from "entities/product";
+import MatchNavigateBar from "shared/ui/matchNavigateBar";
 import SortingMatchList from "shared/ui/sortingMatchList";
 
 const Match: React.FC = () => {
   return (
     <div className="container">
+      <MatchNavigateBar />
       <Grid2 container spacing={2} columns={4}>
         <Grid2 size={1}>
           <ProductShort />

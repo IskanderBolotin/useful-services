@@ -1,4 +1,4 @@
-export const enum AppPath {
+export enum AppPath {
   Index = "/",
   Products = "/products",
   Match = "/match"

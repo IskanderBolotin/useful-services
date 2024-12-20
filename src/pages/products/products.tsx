@@ -7,6 +7,7 @@ import InfoForm from "shared/ui/infoForm";
 import WarningText from "shared/ui/warningText";
 import { isDefinedArray } from "shared/lib/isDefined";
 import SortingList from "shared/ui/sortingList";
+import AddButton from "shared/ui/addButton";
 
 const data = [
   {
@@ -78,18 +79,17 @@ export const Products: React.FC = () => {
             </Box>
             <Box sx={{ marginTop: "20px" }}>
               <PriceForm />
-            </Box>      
+            </Box>
           </Stack>
         </Grid2>
         <Grid2 size={16} component="main">
+          <Box sx={{ mb: 2 }}>
+            <AddButton />
+          </Box>
           <Box sx={{ marginBottom: "18px" }}>
             <SortingList />
           </Box>
-          {
-            isDataLoading ?
-            <ProductList data={data} /> :
-            <WarningText />
-          }
+          {isDataLoading ? <ProductList data={data} /> : <WarningText />}
         </Grid2>
       </Grid2>
     </div>

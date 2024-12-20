@@ -77,7 +77,6 @@ const SelectInput = () => {
         value={selectValue}
         onChange={handleChange}
         displayEmpty
-        inputProps={{ "aria-label": "Without label" }}
         input={<CustomText />}
         IconComponent={Icon}
         renderValue={(value: any) => {
