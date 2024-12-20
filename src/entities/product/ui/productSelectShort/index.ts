@@ -1,0 +1,1 @@
+export { ProductSelectShort } from "./productSelectShort";

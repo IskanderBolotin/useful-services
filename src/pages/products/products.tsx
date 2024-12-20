@@ -8,6 +8,8 @@ import WarningText from "shared/ui/warningText";
 import { isDefinedArray } from "shared/lib/isDefined";
 import SortingList from "shared/ui/sortingList";
 import AddButton from "shared/ui/addButton";
+import ImportButton from "shared/ui/importButton";
+import ExportButton from "shared/ui/exportButton";
 
 const data = [
   {
@@ -84,7 +86,17 @@ export const Products: React.FC = () => {
         </Grid2>
         <Grid2 size={16} component="main">
           <Box sx={{ mb: 2 }}>
-            <AddButton />
+            <Grid2 container justifyContent="space-between">
+              <Grid2>
+                <ExportButton />
+              </Grid2>
+              <Grid2>
+                <ImportButton />
+              </Grid2>
+              <Grid2>
+                <AddButton />
+              </Grid2>
+            </Grid2>
           </Box>
           <Box sx={{ marginBottom: "18px" }}>
             <SortingList />

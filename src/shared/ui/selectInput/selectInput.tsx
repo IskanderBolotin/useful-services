@@ -3,10 +3,11 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import InputBase from "@mui/material/InputBase";
 import { useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import Icon from "./images/arrow-down-icon.svg?react";
+import { SelectOptionsType, SelectViewType } from "./type";
 
-const CustomText = styled(InputBase)(() => ({
+const CustomTextCommon = styled(InputBase)(() => ({
   width: "100%",
   "& .MuiInputBase-input": {
     backgroundColor: "transparent",
@@ -18,8 +19,28 @@ const CustomText = styled(InputBase)(() => ({
     border: "none",
     height: "32px",
     ["text-align"]: "left",
-    boxSizing:" border-box",
+    boxSizing: " border-box",
   },
+}));
+
+const CustomTextPrimary = styled(InputBase)(() => ({
+  width: "100%",
+  "& .MuiInputBase-input": {
+    backgroundColor: "#6d32b8",
+    color: "#fefefe",
+    fontWeight: 700,
+    textAlign: "center",
+    borderRadius: "10px",
+    padding: "8px 24px",
+    borederRadius: "10px",
+    border: "none",
+    height: "auto",
+    ["text-align"]: "left",
+    boxSizing: " border-box",
+  },
+  "& .MuiSelect-icon": {
+    top: "calc(50% - 5px)",
+  }
 }));
 
 const CustomMenuItem = styled(MenuItem)(() => ({
@@ -28,10 +49,10 @@ const CustomMenuItem = styled(MenuItem)(() => ({
   color: "#fefefe",
   fontWeight: 700,
   "&:first-child": {
-    borderRadius: "10px 10px 0 0"
+    borderRadius: "10px 10px 0 0",
   },
   "&:last-child": {
-    borderRadius: "0 0 10px 10px"
+    borderRadius: "0 0 10px 10px",
   },
   "&:not(:last-child)": {
     borderBottom: "1px solid #fefefe",
@@ -64,67 +85,86 @@ const CustomMenuItem = styled(MenuItem)(() => ({
   },
 }));
 
-const SelectInput = () => {
+type SelectInputProps = {
+  options: SelectOptionsType[];
+  label: string;
+  viewType?: SelectViewType;
+};
+
+const SelectInput: React.FC<SelectInputProps> = ({
+  label,
+  options,
+  viewType = SelectViewType.Common,
+}) => {
   const [selectValue, setSelectValue] = useState<string>();
+  
   const handleChange = (event: { target: { value: string } }) => {
     console.log("target", event.target);
     setSelectValue(event.target.value);
   };
 
+  const renderInput = () => {
+    switch (viewType) {
+      case SelectViewType.Common:
+        return <CustomTextCommon />;
+      case SelectViewType.Primary:
+        return <CustomTextPrimary />;
+    }
+  };
+
   return (
-    <Box sx={{ mb: "16px" }}>
-      <Select
-        value={selectValue}
-        onChange={handleChange}
-        displayEmpty
-        input={<CustomText />}
-        IconComponent={Icon}
-        renderValue={(value: any) => {
-          if (!value) {
-            return (
-              <Typography
-                sx={{
-                  color: "#fefefe",
-                  fontWeight: 700,
-                }}
-              >
-                Бренд
-              </Typography>
-            );
-          }
-          return selectValue;
-        }}
-        MenuProps={{
-          anchorOrigin: {
-            vertical: "bottom",
-            horizontal: "right"
+    <Select
+      value={selectValue}
+      onChange={handleChange}
+      displayEmpty
+      input={renderInput()}
+      IconComponent={Icon}
+      renderValue={(value: any) => {
+        if (!value) {
+          return (
+            <Typography
+              sx={{
+                color: "#fefefe",
+                fontWeight: 700,
+              }}
+            >
+              {label}
+            </Typography>
+          );
+        }
+        return selectValue;
+      }}
+      MenuProps={{
+        anchorOrigin: {
+          vertical: "bottom",
+          horizontal: "right",
+        },
+        transformOrigin: {
+          vertical: "top",
+          horizontal: "right",
+        },
+        sx: {
+          background: "rgba(0, 0, 0, 0.25)",
+          "& .MuiMenu-paper": {
+            borderRadius: "0px",
+            background: "transparent",
+            minWidth: "250px !important",
           },
-          transformOrigin: {
-            vertical: "top",
-            horizontal: "right"
-          },
+        },
+        MenuListProps: {
           sx: {
-            background: "rgba(0, 0, 0, 0.25)",
-            "& .MuiMenu-paper": {
-              borderRadius: "0px",
-              background: "transparent",
-              minWidth: "250px !important"
-            }
+            padding: 0,
+            background: "transparent",
           },
-          MenuListProps: {
-            sx: {
-              padding: 0,
-              background: "transparent",
-            },
-          },
-        }}
-      >
-        <CustomMenuItem value={"NOW"}>NOW</CustomMenuItem>
-        <CustomMenuItem value={"California Gold Nutrition"}>California Gold Nutrition</CustomMenuItem>
-        <CustomMenuItem value={"MUSCLETECH"}>MUSCLETECH</CustomMenuItem>
-        <CustomMenuItem value={"Olimp Sport Nutrition"}>Olimp Sport Nutrition</CustomMenuItem>
-      </Select>
-    </Box>
+        },
+      }}
+    >
+      {options.map((option) => {
+        return (
+          <CustomMenuItem value={option.value}>{option.name}</CustomMenuItem>
+        );
+      })}
+    </Select>
   );
 };
 
