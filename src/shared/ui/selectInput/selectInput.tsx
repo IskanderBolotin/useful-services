@@ -13,12 +13,11 @@ const CustomTextCommon = styled(InputBase)(() => ({
     backgroundColor: "transparent",
     color: "#fefefe",
     fontWeight: 700,
-    textAlign: "center",
     borderRadius: "10px",
     padding: "4px 0px",
     border: "none",
     height: "32px",
-    ["text-align"]: "left",
+    textAlign: "left",
     boxSizing: " border-box",
   },
 }));
@@ -29,13 +28,12 @@ const CustomTextPrimary = styled(InputBase)(() => ({
     backgroundColor: "#6d32b8",
     color: "#fefefe",
     fontWeight: 700,
-    textAlign: "center",
     borderRadius: "10px",
     padding: "8px 24px",
     borederRadius: "10px",
     border: "none",
     height: "auto",
-    ["text-align"]: "left",
+    textAlign: "left",
     boxSizing: " border-box",
   },
   "& .MuiSelect-icon": {
@@ -161,7 +159,7 @@ const SelectInput: React.FC<SelectInputProps> = ({
     >
       {options.map((option) => {
         return (
-          <CustomMenuItem value={option.value}>{option.name}</CustomMenuItem>
+          <CustomMenuItem value={option.value} key={option.value}>{option.name}</CustomMenuItem>
         );
       })}
     </Select>

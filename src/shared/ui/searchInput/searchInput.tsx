@@ -14,11 +14,10 @@ const CustomText = styled(Input)(() => ({
     backgroundColor: "#fefefe",
     color: "#6d32b8",
     fontWeight: 700,
-    textAlign: "center",
     borderRadius: "10px",
     padding: "4px 16px",
     border: "none",
-    ["text-align"]: "left"
+    textAlign: "left"
   },
 }));
 

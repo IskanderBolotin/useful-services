@@ -11,7 +11,10 @@ export default defineConfig({
     })
   ],
   server: {
-    port: 10020
+    port: 10020,
+    cors: {
+      origin: "localhost:10020"
+    }
   },
   resolve: {
     alias: {
