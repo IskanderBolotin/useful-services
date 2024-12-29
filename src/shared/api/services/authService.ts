@@ -1,21 +1,21 @@
 import { AxiosResponse } from "axios";
 import { instance } from "../config";
-import { AuthResponse, UserDataType } from "shared/models";
+import { AuthResponseType, UserDataType } from "shared/models";
 
 const AuthService = {
-  registration: async (userLogin: Required<UserDataType>): Promise<AxiosResponse<AuthResponse>> => {
+  registration: async (userLogin: Required<UserDataType>): Promise<AxiosResponse<AuthResponseType>> => {
     return instance.post("/api/v1/users/registration", userLogin);
   },
 
-  login: async (userLogin: UserDataType): Promise<AxiosResponse<AuthResponse>> => {
+  login: async (userLogin: UserDataType): Promise<AxiosResponse<AuthResponseType>> => {
     return instance.post("/api/v1/users/login", userLogin);
   },
 
-  refreshAccessToken: (): Promise<AxiosResponse<AuthResponse>> => {
+  refreshAccessToken: (): Promise<AxiosResponse<AuthResponseType>> => {
     return instance.post("/api/v1/users/refresh-access-token");
   },
 
-  getUser: (): Promise<AxiosResponse<AuthResponse>> => {
+  getUser: (): Promise<AxiosResponse<AuthResponseType>> => {
     return instance.post("/api/v1/users/get-me")
   }
 

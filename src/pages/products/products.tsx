@@ -1,7 +1,6 @@
 import { ProductList } from "widgets/matchProducts";
 import { SelectMarketplace } from "widgets/selectMarketplace";
-import { Box, Grid2, Stack } from "@mui/material";
-import CheckboxFilter from "shared/ui/checkboxFilter";
+import { Box, Grid2 } from "@mui/material";
 import PriceForm from "shared/ui/priceForm";
 import InfoForm from "shared/ui/infoForm";
 import WarningText from "shared/ui/warningText";
@@ -10,6 +9,10 @@ import SortingList from "shared/ui/sortingList";
 import AddButton from "shared/ui/addButton";
 import ImportButton from "shared/ui/importButton";
 import ExportButton from "shared/ui/exportButton";
+import { useContext, useEffect, useState } from "react";
+import { Context } from "app/app";
+import { observer } from "mobx-react-lite";
+import CheckboxFilter from "shared/ui/checkboxFilter";
 
 const data = [
   {
@@ -62,27 +65,48 @@ const data = [
   },
 ];
 
+const loadingData = {
+  // brand: "",
+  // price_from: 0,
+  // price_to: 1000,
+  // nm_id: 0,
+  offset: 10,
+  limit: 20,
+};
+
 export const Products: React.FC = () => {
+  const { store } = useContext(Context);
+  const [products, setProducts] = useState<any>();
   const isDataLoading = isDefinedArray(data);
+
+  const loadProducts = async () => {
+    const data = await store.loadMyProducts(loadingData);
+    console.log(products);
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    loadProducts()
+  }, []);
 
   return (
     <div className="container">
       <Grid2 container spacing={2} columns={25}>
         <Grid2 size={9} component="aside">
-          <Stack>
-            <Box>
+          <Grid2 container spacing={3} columns={24} direction="column">
+            <Grid2 size={24}>
               <SelectMarketplace />
-            </Box>
-            <Box sx={{ marginTop: "20px" }}>
+            </Grid2>
+            <Grid2 size={24}>
               <InfoForm />
-            </Box>
-            <Box sx={{ marginTop: "20px" }}>
+            </Grid2>
+            <Grid2 size={24}>
               <CheckboxFilter />
-            </Box>
-            <Box sx={{ marginTop: "20px" }}>
+            </Grid2>
+            <Grid2 size={24}>
               <PriceForm />
-            </Box>
-          </Stack>
+            </Grid2>
+          </Grid2>
         </Grid2>
         <Grid2 size={16} component="main">
           <Box sx={{ mb: 2 }}>
@@ -108,4 +132,4 @@ export const Products: React.FC = () => {
   );
 };
 
-export default Products;
+export default observer(Products);

@@ -46,10 +46,10 @@ const CustomMenuItem = styled(MenuItem)(() => ({
   backgroundColor: "#6d32b8",
   color: "#fefefe",
   fontWeight: 700,
-  "&:first-child": {
+  "li:first-of-type": {
     borderRadius: "10px 10px 0 0",
   },
-  "&:last-child": {
+  "li:last-of-type": {
     borderRadius: "0 0 10px 10px",
   },
   "&:not(:last-child)": {
@@ -94,10 +94,9 @@ const SelectInput: React.FC<SelectInputProps> = ({
   options,
   viewType = SelectViewType.Common,
 }) => {
-  const [selectValue, setSelectValue] = useState<string>();
+  const [selectValue, setSelectValue] = useState<string>("");
   
-  const handleChange = (event: { target: { value: string } }) => {
-    console.log("target", event.target);
+  const handleChange = (event: any) => {
     setSelectValue(event.target.value);
   };
 
@@ -118,6 +117,7 @@ const SelectInput: React.FC<SelectInputProps> = ({
       input={renderInput()}
       IconComponent={Icon}
       renderValue={(value: any) => {
+        console.log(value)
         if (!value) {
           return (
             <Typography
@@ -144,7 +144,7 @@ const SelectInput: React.FC<SelectInputProps> = ({
         sx: {
           background: "rgba(0, 0, 0, 0.25)",
           "& .MuiMenu-paper": {
-            borderRadius: "0px",
+            borderRadius: "10px",
             background: "transparent",
             minWidth: "250px !important",
           },

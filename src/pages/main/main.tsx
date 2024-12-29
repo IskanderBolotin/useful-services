@@ -1,4 +1,4 @@
-import { Button, Grid2 } from "@mui/material";
+import { Button, Grid2, Paper } from "@mui/material";
 import { Context } from "app/app";
 import { observer } from "mobx-react-lite";
 import { useContext, useEffect, useState } from "react";
@@ -28,24 +28,40 @@ const Main: React.FC = () => {
         alignItems="center"
         spacing={1}
       >
-        <Grid2 size={12}>
-          <Grid2 container columns={24}>
-            <Grid2 size={24}>
-              <Button
-                sx={{
-                  width: "100%",
-                  marginBottom: "5px",
-                }}
-                size="large"
-                onClick={() => {
-                  setIsRegister((value) => !value);
-                }}
-              >
-                {isRegister ? "Регистрация" : "Есть аккаунт"}
-              </Button>
+        <Grid2 size={6}>
+          <Paper sx={{ p: 3 }}>
+            {isRegister ? <LoginForm /> : <AuthForm />}
+            <Grid2 container columns={24} spacing={1} sx={{ marginTop: "16px"}}>
+              <Grid2 size={12}>
+                <Button
+                  sx={{
+                    width: "100%",
+                  }}
+                  size="small"
+                  onClick={() => {
+                    setIsRegister(true);
+                  }}
+                  disabled={isRegister}
+                >
+                  Есть аккаунт
+                </Button>
+              </Grid2>
+              <Grid2 size={12}>
+                <Button
+                  sx={{
+                    width: "100%",
+                  }}
+                  size="small"
+                  onClick={() => {
+                    setIsRegister(false);
+                  }}
+                  disabled={!isRegister}
+                >
+                  Регистрация
+                </Button>
+              </Grid2>
             </Grid2>
-          </Grid2>
-          {isRegister ? <LoginForm /> : <AuthForm />}
+          </Paper>
         </Grid2>
       </Grid2>
     </>

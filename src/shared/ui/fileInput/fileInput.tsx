@@ -1,6 +1,7 @@
 import { Grid2, Input, styled } from "@mui/material";
 import CustomButton, { ButtonViewType } from "../customButton";
 import s from "./fileInput.module.scss";
+import { FileAcceptType } from "shared/models";
 
 
 const CustomText = styled(Input)(() => ({
@@ -31,9 +32,18 @@ const CustomText = styled(Input)(() => ({
 
 type FileInpurProps = {
   id?: string;
+  accept?: FileAcceptType[];
 };
 
-const FileInput: React.FC<FileInpurProps> = ({ id = "file-input" }) => {
+const FileInput: React.FC<FileInpurProps> = ({ id = "file-input", accept = [".xlsx"] }) => {
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // event.target - ссылка на инпут
+    // target.files - список файлов инпута, из которого берем единственный файл
+    // handleFile(event.target.files[0]); 
+    console.log(event.target.files?.[0], event.target.value)
+  };
+
   return (
     <div>
       <div className={s.title}>
@@ -62,7 +72,7 @@ const FileInput: React.FC<FileInpurProps> = ({ id = "file-input" }) => {
             Выбрать
           </CustomButton>
         </Grid2>
-        <input id={id} type="file" hidden />
+        <input id={id} type="file" hidden onChange={handleFileChange} accept={accept?.join(",")} />
       </Grid2>
     </div>
   );
